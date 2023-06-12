@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {useQuery, useMutation} from "@apollo/react-hooks"
-import {ME} from '../utils/queries'
-import {SAVEBOOK} from '../utils/mutations'
+import {useQuery, useMutation} from "@apollo/react-hooks";
+import {ME} from '../utils/queries';
+import {SAVEBOOK} from '../utils/mutations';
 
 
 

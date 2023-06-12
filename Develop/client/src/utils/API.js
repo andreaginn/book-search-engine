@@ -16,6 +16,8 @@ export const createUser = (userData) => {
     },
     body: JSON.stringify(userData),
   });
+
+  console.log("test")
 };
 
 export const loginUser = (userData) => {

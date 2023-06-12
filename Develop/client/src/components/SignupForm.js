@@ -28,9 +28,9 @@ const SignupForm = () => {
     }
 
     try {
-      const response = await createUser(userFormData);
+      const response = await createUser({userFormData});
 
-      if (!response.ok) {
+      if (!response) {
         throw new Error('something went wrong!');
       }
 
@@ -38,15 +38,15 @@ const SignupForm = () => {
       console.log(user);
       Auth.login(token);
     } catch (err) {
-      console.error(err);
+      // console.error(err);
       setShowAlert(true);
     }
 
-    setUserFormData({
-      username: '',
-      email: '',
-      password: '',
-    });
+    // setUserFormData({
+    //   username: '',
+    //   email: '',
+    //   password: '',
+    // });
   };
 
   return (
