@@ -1,4 +1,4 @@
-import {gql} from "graphql-tag"
+import {gql} from "@apollo/client"
 
 export const ME = gql`
 {
@@ -6,7 +6,8 @@ export const ME = gql`
         _id
         username
         email
-        books {
+        bookCount
+        savedBooks {
             bookId
             authors
             description

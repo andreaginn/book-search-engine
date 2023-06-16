@@ -1,6 +1,6 @@
-import {gql} from "graphql-tag"
+import {gql} from "@apollo/client"
 
-export const LOGIN = gql`
+export const LOGINUSER = gql`
 mutation login($email: String, $password: String){
     login(email: $email, password: $password){
         token
@@ -15,43 +15,68 @@ mutation login($email: String, $password: String){
 `
 
 export const ADDUSER = gql`
-mutation addUser($username: String, $email: String, $password: String) {
+mutation addUser(
+    $username: String, 
+    $email: String, 
+    $password: String
+    ) {
+    ADUSER(
+        username: $username
+        email: $email
+        password: $password
+    ) {
     token
     user {
         username
         _id
+        email
+        bookCount
+        savedBooks {
+            authors
+            bookId
+            iamge
+            link
+            title
+            description
+        }
     }
+}
 }
 `
 
 export const SAVEBOOK = gql`
-mutation saveBook($authors: [String], $description: String, $title: String, $bookId: ID, 
-    $image: String, $link: String) {
-        _id
-        username
-        books{ 
-            bookId
-            authors
-            description
-            title
-            image
-            link
-        }
+mutation saveBook($newBook: InputBook) {
+    saveBook(newBook: $newBook) {
+      _id
+      username
+      email
+      savedBooks {
+        bookId
+        authors
+        description
+        title
+        image
+        link
+      }
     }
-`
+  }
+`;
 
 export const REMOVEBOOK = gql`
-mutation removeBook($authors: [String], $description: String, $title: String, $bookId: ID, 
-    $image: String, $link: String) {
-        _id
-        username
-        books{ 
-            bookId
-            authors
-            description
-            title
-            image
-            link
-        }
+mutation removeBook($bookId: ID!) {
+    removeBook(bookId: $bookId) {
+      _id
+      username
+      email
+      savedBooks {
+        bookId
+        authors
+        description
+        title
+        image
+        link
+      }
     }
+  }
+`;
 `
