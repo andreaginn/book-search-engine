@@ -35,6 +35,27 @@ type Mutation {
 type Query {
     me: User
 }
+
+addUser(
+    username: String
+    email: String,
+    password: String
+
+)
+
+saveBook(
+    bookId: String,
+    authors: [String],
+    description: String,
+    title: String,
+    image: String,
+    link: String
+)
+
+removeBook(
+    bookId: String,
+)
+
 `
 
 module.exports = typeDefs
