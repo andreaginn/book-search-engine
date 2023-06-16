@@ -4,7 +4,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import { LOGINUSER } from '../utils/mutations';
 import { logMissingFieldErrors } from '@apollo/client/core/ObservableQuery';
 
 const LoginForm = () => {
@@ -13,7 +13,7 @@ const LoginForm = () => {
   const [showAlert, setShowAlert] = useState(false);
 
 
-const [login, {loading }] = useMutation(LOGIN_USER);
+const [login, {loading }] = useMutation(LOGINUSER);
 
 
   const handleInputChange = (event) => {
