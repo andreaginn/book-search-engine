@@ -79,4 +79,3 @@ mutation removeBook($bookId: ID!) {
     }
   }
 `;
-`
