@@ -8,7 +8,7 @@ import {
 } from 'react-bootstrap';
 
 import {useQuery, useMutation} from "@apollo/react-hooks"
-import { searchGoogleBooks, deleteBook } from '../utils/API';
+import { searchGoogleBooks } from '../utils/API';
 import {ME} from '../utils/queries'
 import {REMOVEBOOK} from '../utils/mutations'
 import Auth from '../utils/auth';
